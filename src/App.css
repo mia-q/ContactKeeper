@@ -1,0 +1,9 @@
+* {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.contact-photo {
+    width: 125px;
+    height: 125px;
+    border-radius: 25%;
+}
