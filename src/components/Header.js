@@ -1,12 +1,15 @@
 import React from "react";
-import { ReactDOM } from "react";
 
 function Header() {
     return (
-        <header className="header">
-            <h1>Hello World</h1>
-            <p>this is now working</p>
-        </header>
+        <>
+            <header>
+                <h1>ContactKeeper</h1>
+                <p>you didn't need it, but i've created it (just to get better with react). yet another place to keep your contacts. </p>
+            </header>
+            
+        </>
+        
     );
 }
 

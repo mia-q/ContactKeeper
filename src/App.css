@@ -7,3 +7,53 @@
     height: 125px;
     border-radius: 25%;
 }
+
+header {
+    background-color: #A4CE95;
+    padding: 20px;
+    width: 100%;
+}
+
+header p {
+    font-size: 15px;
+}
+h1 {
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    font-size: 40px;
+}
+
+body {
+    background-color: #FAF9F6;
+    margin: 0px;
+}
+
+button {
+    background-color: #5F5D9C;
+    border-radius: 5px;
+    color: white;
+    border: none;
+    font-size: 15px;
+    padding: 10px;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #3e3d69;
+}
+
+i {
+    padding: 3px
+}
+
+input::file-selector-button {
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    background-color: #5F5D9C;
+    color: white;
+    padding: 0.5em;
+    border: thin solid grey;
+    border-radius: 3px;
+}
+
+input::file-selector-button:hover {
+    background-color: #3e3d69;
+}

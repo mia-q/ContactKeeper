@@ -1,6 +1,6 @@
 //TO DO:
 //fix remove contact button 
-//conditional rendering for contact photo
+//conitional showing works, but not conditional hiding for photo
 //styling
 
 import React, { useState } from 'react';
@@ -13,9 +13,9 @@ function App() {
   const [contacts, setContacts] = useState([]);
 
   function addContact(newContact) {
-    setContacts( prevContacts => {
+      setContacts( prevContacts => {
       return [...prevContacts, newContact]
-    });
+    }); 
   }
 
   function deleteContact(id) {
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
+      <Header className="header"/>
       <NewContact addContact={addContact}/>
       {contacts.map((contact, index) => {
         return (
