@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 function ContactCard(props) {
     function handleDelete() {
         props.onDelete(props.id);
@@ -13,10 +12,10 @@ function ContactCard(props) {
                 src={props.imgUrl} 
                 alt={props.name} 
                 />
-                <h3>{props.name}</h3>
-                <p>{props.number}</p>
-                <p>{props.email}</p>
-                <button onClick={handleDelete}>Remove Contact <i className="fa-solid fa-trash-can"></i></button>
+                <h3 className = "contact-name">{props.name}</h3>
+                <p className = "contact-number">{props.number}</p>
+                <p className="contact-email">{props.email}</p>
+                <button onClick={handleDelete} className = "card-button"><i className="fa-solid fa-trash-can"></i></button>
             </div>
             );
     

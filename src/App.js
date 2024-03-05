@@ -1,6 +1,5 @@
 //TO DO:
-//fix remove contact button 
-//conitional showing works, but not conditional hiding for photo
+//fix placeholder image
 //styling
 
 import React, { useState } from 'react';
@@ -34,6 +33,7 @@ function App() {
         return (
           <ContactCard
             key={index}
+            id = {index}
             imgUrl={contact.imgUrl}
             name={contact.name}
             number={contact.number}

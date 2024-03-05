@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 
+import placeholderImage from "../images/person-avatar.png";
+
 function NewContact(props) {
     const [isEditing, setEditing] = useState(false);
     // const [imageURL, setImageURL] = useState("../../public/images/person-avatar.png");
@@ -48,6 +50,7 @@ function NewContact(props) {
                 });
                 setEditing(false);
                 event.preventDefault();
+                // setImageURL("../../public/images/person-avatar.png");
             }
             
         }
@@ -58,18 +61,27 @@ function NewContact(props) {
 
     return (
     <div>
-        <button onClick={edit} style={{display: isEditing ? "none" : "block"}}>New Contact <i className="fa-solid fa-address-card"></i></button>
+        <button onClick={edit} style={{display: isEditing ? "none" : "block"}}>Add <i className="fa-solid fa-address-card"></i></button>
         <form style={{display: isEditing ? "block" : "none"}}>
             {isEditing && (
                 <>
-                    <input
+                <label for="imgUrl">Contact Photo</label>
+                <input
                     name = "imgUrl"
                     onChange={loadFile}
                     placeholder="Contact Photo"
                     type = "file"
                     accept = "image/*" 
                     />
-                    <input 
+                    
+                <div className = "contact-card">
+                    <img
+                    className = "contact-photo"
+                    src={contact.imgUrl ? contact.imgUrl : placeholderImage}
+                    />
+                    
+                    <input
+                    className = "contact-name"
                     name = "name"
                     onChange={handleChange}
                     value = {contact.name}
@@ -77,18 +89,21 @@ function NewContact(props) {
                     required
                     />
                     <input 
+                    className="contact-number"
                     name = "number"
                     onChange={handleChange}
                     value = {contact.number}
                     placeholder="Number"
                     />
                     <input 
+                    className="contact-email"
                     name = "email"
                     onChange={handleChange}
                     value = {contact.email}
                     placeholder="Email"
                     />
-                    <button type="submit" onClick={handleSubmit}><i className="fa-solid fa-plus"></i></button>
+                    <button type="submit" onClick={handleSubmit} className="card-button"><i className="fa-solid fa-plus"></i></button>
+                </div>
                 </>
             )} 
         </form>

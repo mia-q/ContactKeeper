@@ -2,14 +2,11 @@
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.contact-photo {
-    width: 125px;
-    height: 125px;
-    border-radius: 25%;
-}
+
 
 header {
     background-color: #A4CE95;
+    color: #2b2a44;
     padding: 20px;
     width: 100%;
 }
@@ -46,14 +43,55 @@ i {
 }
 
 input::file-selector-button {
-    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-    background-color: #5F5D9C;
-    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: white;
+    color: #5F5D9C;
     padding: 0.5em;
     border: thin solid grey;
     border-radius: 3px;
 }
 
 input::file-selector-button:hover {
-    background-color: #3e3d69;
+    background-color: #e5e2e2;
+}
+
+.contact-card {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 15% 15% 15%;
+}
+
+.contact-photo {
+    width: 125px;
+    height: 125px;
+    border-radius: 25%;
+    grid-column: 1 / 2;
+    grid-row: 1 / span 2
+}
+
+.contact-name {
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+}
+
+.contact-number {
+    grid-column: 2 / 3;
+    grid-row: 1/2;
+}
+
+.contact-email {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.card-button {
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    color:#5F5D9C;
+    background-color: #FAF9F6;
+    width: 50px;
+}
+
+.card-button:hover {
+    background-color: #e5e2e2;
 }
