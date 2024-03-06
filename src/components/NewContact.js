@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 
-import placeholderImage from "../images/person-avatar.png";
+import placeholderImage from "../images/person.png";
 
 function NewContact(props) {
     const [isEditing, setEditing] = useState(false);
-    // const [imageURL, setImageURL] = useState("../../public/images/person-avatar.png");
     const [contact, setContact] = useState({
         imgUrl: "",
         name: "", 
@@ -50,7 +49,6 @@ function NewContact(props) {
                 });
                 setEditing(false);
                 event.preventDefault();
-                // setImageURL("../../public/images/person-avatar.png");
             }
             
         }
@@ -60,7 +58,7 @@ function NewContact(props) {
         }
 
     return (
-    <div>
+    <div className="new-contact-form">
         <button onClick={edit} style={{display: isEditing ? "none" : "block"}}>Add <i className="fa-solid fa-address-card"></i></button>
         <form style={{display: isEditing ? "block" : "none"}}>
             {isEditing && (

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import placeHolderImage from "../images/person.png";
 function ContactCard(props) {
     function handleDelete() {
         props.onDelete(props.id);
@@ -9,7 +10,7 @@ function ContactCard(props) {
             <div className="contact-card">
                 <img 
                 className="contact-photo"
-                src={props.imgUrl} 
+                src={props.imgUrl ? props.imgUrl : placeHolderImage} 
                 alt={props.name} 
                 />
                 <h3 className = "contact-name">{props.name}</h3>
