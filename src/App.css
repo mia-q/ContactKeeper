@@ -65,15 +65,23 @@ input::file-selector-button:hover {
     background-color: #e5e2e2;
 }
 
+.main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .contact-card {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr;
-    width: 40%;
-    padding: 20px;
-    margin: 5%;
+    padding: 5px;
     border:#5F5D9C 1px solid;
     border-radius: 12px;
+    flex-basis: 30%;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 .contact-photo {
@@ -113,7 +121,7 @@ input::file-selector-button:hover {
     color:#5F5D9C;
     background-color: #FAF9F6;
     width: 50px;
-    justify-self: flex-end;
+    justify-self: space-evenly;
 }
 
 
@@ -121,13 +129,15 @@ input::file-selector-button:hover {
     background-color: #e5e2e2;
 }
 
-.new-contact-form { /*this needs some work :( */
-    justify-content: center;
-}
+.new-contact-form {
+  flex-basis: 100%;
+} 
 
 .contact-list {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
 }
 
 .no-contacts {
@@ -135,4 +145,5 @@ input::file-selector-button:hover {
     padding-top: 50px;
     text-align: center;
     font-weight: 600;
+    flex-basis: 100%;
 }

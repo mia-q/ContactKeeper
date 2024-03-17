@@ -1,6 +1,6 @@
 //TO DO:
-//styling for noContacts, actual cards, card lists.
-//bonus: enforce proper format for contact cards
+// add ability to edit contacts
+// enforce format for contact information?
 
 import React, { useState } from 'react';
 import './App.css';
@@ -29,22 +29,24 @@ function App() {
   return (
     <div className="App">
       <Header className="header"/>
-      <NoContacts hasContacts={contacts.length > 0 ? true : false}/>
-      <NewContact addContact={addContact}/>
-      <div className="contact-list">
-      {contacts.map((contact, index) => {
-        return (
-          <ContactCard
-            key={index}
-            id = {index}
-            imgUrl={contact.imgUrl}
-            name={contact.name}
-            number={contact.number}
-            email={contact.email}
-            onDelete={deleteContact}
-          />
-        );
-      })}
+      <div className="main-content"> 
+         <NoContacts hasContacts={contacts.length > 0 ? true : false}/>
+        <NewContact addContact={addContact}/>
+        <div className="contact-list">
+        {contacts.map((contact, index) => {
+          return (
+            <ContactCard
+              key={index}
+              id = {index}
+              imgUrl={contact.imgUrl}
+              name={contact.name}
+              number={contact.number}
+              email={contact.email}
+              onDelete={deleteContact}
+            />
+          );
+        })}
+        </div>
       </div>
     </div>
   );
