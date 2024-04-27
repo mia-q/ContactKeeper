@@ -1,12 +1,17 @@
 import React from "react";
+import phoneLogo from "../images/phone1.png";
 
 function Header() {
 
     return (
         <>
+        
             <header>
-                <h1>ContactKeeper</h1>
-                <p>you didn't need it, but i've created it (just to get better with react). another place to keep your contacts. </p>
+                <div class="container">
+                   <img src={phoneLogo} />
+                    <h1>ContactKeeper</h1> 
+                </div>
+                
             </header>
             
         </>

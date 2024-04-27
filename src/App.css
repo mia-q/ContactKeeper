@@ -3,13 +3,15 @@
 }
 
 header {
-    background-color: #A4CE95;
     color: #2b2a44;
     padding-top: 5px;
     padding-left: 20px;
     padding-bottom: 5px;
     width: 100%;
-    
+}
+
+header img {
+    height: 125px;
 }
 
 p {
@@ -18,11 +20,12 @@ p {
     padding-left: 10px;
     margin-top: 0;
 }
+
 h1 {
     
     font-weight: 400;
     font-size: 40px;
-    margin-bottom: 0;
+    margin: 0px;
 }
 
 body {
@@ -65,12 +68,49 @@ input::file-selector-button:hover {
     background-color: #e5e2e2;
 }
 
+/*page */
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
 .main-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+.contact-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.no-contacts {
+    color: #5F5D9C;
+    padding-top: 50px;
+    text-align: center;
+    font-weight: 600;
+    flex-basis: 100%;
+}
+
+.msg-and-btn {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-basis: 100%;
+    margin-top: 15px;
+    background-color: #A4CE95;
+    padding: 25px;
+}
+
+/*contact card */
 
 .contact-card {
     display: grid;
@@ -132,18 +172,3 @@ input::file-selector-button:hover {
 .new-contact-form {
   flex-basis: 100%;
 } 
-
-.contact-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    width: 100%;
-}
-
-.no-contacts {
-    color: #5F5D9C;
-    padding-top: 50px;
-    text-align: center;
-    font-weight: 600;
-    flex-basis: 100%;
-}
