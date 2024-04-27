@@ -45,6 +45,7 @@ function App() {
               number={contact.number}
               email={contact.email}
               onDelete={deleteContact}
+              className='list-item'
             />
           );
         })}

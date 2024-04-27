@@ -88,14 +88,14 @@ function NewContact(props) {
                                         type = "file"
                                         accept = "image/*" 
                                         />
-                                    <div className = "contact-card">
+                                    <div className = "contact-card input">
                                         <img
                                         className = "contact-photo"
                                         src={contact.imgUrl ? contact.imgUrl : placeholderImage}
                                         />
                                         
                                         <input
-                                        className = "contact-name"
+                                        className = "contact-name input"
                                         name = "name"
                                         onChange={handleChange}
                                         value = {contact.name}
@@ -103,21 +103,23 @@ function NewContact(props) {
                                         required
                                         />
                                         <input 
-                                        className="contact-number"
+                                        className="contact-number input"
                                         name = "number"
                                         onChange={handleChange}
                                         value = {contact.number}
                                         placeholder="Number"
                                         />
                                         <input 
-                                        className="contact-email"
+                                        className="contact-email input"
                                         name = "email"
                                         onChange={handleChange}
                                         value = {contact.email}
                                         placeholder="Email"
                                         />
-                                        <button type="submit" onClick={handleSubmit} className="card-button"><i className="fa-solid fa-plus"></i></button>                
-                                        <button onClick={close}>Cancel</button>
+                                        <div className="button-container">
+                                            <button type="submit" onClick={handleSubmit} className="card-button"><i className="fa-solid fa-plus"></i> Add</button>                
+                                            <button onClick={close} className="cancel">Cancel</button>
+                                        </div>
                                     </div>
                                 </>
                             )} 
