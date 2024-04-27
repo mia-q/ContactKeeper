@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import { Dialog } from "@headlessui/react";
 
 import placeholderImage from "../images/person.png";
 
 function NewContact(props) {
+    const [isOpen, setIsOpen] = useState(false);
     const [isEditing, setEditing] = useState(false);
     const [contact, setContact] = useState({
         imgUrl: "",
@@ -48,6 +50,7 @@ function NewContact(props) {
                     email: ""
                 });
                 setEditing(false);
+                setIsOpen(false);
                 event.preventDefault();
             }
             
@@ -55,57 +58,74 @@ function NewContact(props) {
 
         function edit() {
             setEditing(true);
+            setIsOpen(true);
+        }
+
+        function close() {
+            setEditing(false);
+            setIsOpen(false);
         }
 
     return (
     <div className="new-contact-form">
-        <button id =" open-modal " type="button" onClick={edit} style={{display: isEditing ? "none" : "block"}}>Add <i className="fa-solid fa-address-card"></i></button>
-            <form style={{display: isEditing ? "block" : "none"}}>
-                {isEditing && (
-                    <>
-                    <label for="imgUrl">Contact Photo</label>
-                    <input
-                        name = "imgUrl"
-                        onChange={loadFile}
-                        placeholder="Contact Photo"
-                        type = "file"
-                        accept = "image/*" 
-                        />
-                        
-                    <div className = "contact-card">
-                        <img
-                        className = "contact-photo"
-                        src={contact.imgUrl ? contact.imgUrl : placeholderImage}
-                        />
-                        
-                        <input
-                        className = "contact-name"
-                        name = "name"
-                        onChange={handleChange}
-                        value = {contact.name}
-                        placeholder="Name"
-                        required
-                        />
-                        <input 
-                        className="contact-number"
-                        name = "number"
-                        onChange={handleChange}
-                        value = {contact.number}
-                        placeholder="Number"
-                        />
-                        <input 
-                        className="contact-email"
-                        name = "email"
-                        onChange={handleChange}
-                        value = {contact.email}
-                        placeholder="Email"
-                        />
-                        <button type="submit" onClick={handleSubmit} className="card-button"><i className="fa-solid fa-plus"></i></button>
-                    </div>
-                    </>
-                )} 
-            </form>  
-        
+        <Dialog 
+            open={isOpen} 
+            onClose={() => setIsOpen(false)} 
+            className="relative z-50"
+        >
+            <div className="backdrop" aria-hidden="true" />
+                <div className="dialog-container">
+                    <Dialog.Panel className="dialog-panel">
+                        <Dialog.Title>Create New Contact</Dialog.Title>
+                        <form style={{display: isEditing ? "block" : "none"}}>
+                            {isEditing && (
+                                <>
+                                    <label htmlFor="imgUrl">Contact Photo</label>
+                                    <input
+                                        name = "imgUrl"
+                                        onChange={loadFile}
+                                        placeholder="Contact Photo"
+                                        type = "file"
+                                        accept = "image/*" 
+                                        />
+                                    <div className = "contact-card">
+                                        <img
+                                        className = "contact-photo"
+                                        src={contact.imgUrl ? contact.imgUrl : placeholderImage}
+                                        />
+                                        
+                                        <input
+                                        className = "contact-name"
+                                        name = "name"
+                                        onChange={handleChange}
+                                        value = {contact.name}
+                                        placeholder="Name"
+                                        required
+                                        />
+                                        <input 
+                                        className="contact-number"
+                                        name = "number"
+                                        onChange={handleChange}
+                                        value = {contact.number}
+                                        placeholder="Number"
+                                        />
+                                        <input 
+                                        className="contact-email"
+                                        name = "email"
+                                        onChange={handleChange}
+                                        value = {contact.email}
+                                        placeholder="Email"
+                                        />
+                                        <button type="submit" onClick={handleSubmit} className="card-button"><i className="fa-solid fa-plus"></i></button>                
+                                        <button onClick={close}>Cancel</button>
+                                    </div>
+                                </>
+                            )} 
+                        </form> 
+                </Dialog.Panel>
+            </div>
+        </Dialog>
+        <button id =" open-modal " type="button" onClick={edit} >Add <i className="fa-solid fa-address-card"></i></button>
     </div>
     );
 }

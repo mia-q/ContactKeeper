@@ -7,7 +7,7 @@ function Header() {
         <>
         
             <header>
-                <div class="container">
+                <div className="container">
                    <img src={phoneLogo} />
                     <h1>ContactKeeper</h1> 
                 </div>
