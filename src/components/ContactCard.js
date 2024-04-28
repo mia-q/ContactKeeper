@@ -16,7 +16,9 @@ function ContactCard(props) {
                 <h3 className = "contact-name">{props.name}</h3>
                 <p className = "contact-number">{props.number}</p>
                 <p className="contact-email">{props.email}</p>
-                <button onClick={handleDelete} className = "card-button"><i className="fa-solid fa-trash-can"></i></button>
+                <div className="button-container">
+                    <button onClick={handleDelete} className = "card-button"><i className="fa-solid fa-trash-can"></i></button>
+                </div>
             </div>
             );
     

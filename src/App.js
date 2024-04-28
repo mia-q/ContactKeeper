@@ -29,22 +29,27 @@ function App() {
   return (
     <div className="App">
       <Header className="header"/>
-      <NoContacts hasContacts={contacts.length > 0 ? true : false}/>
-      <NewContact addContact={addContact}/>
-      <div className="contact-list">
-      {contacts.map((contact, index) => {
-        return (
-          <ContactCard
-            key={index}
-            id = {index}
-            imgUrl={contact.imgUrl}
-            name={contact.name}
-            number={contact.number}
-            email={contact.email}
-            onDelete={deleteContact}
-          />
-        );
-      })}
+      <div className="main-content"> 
+      <div className="msg-and-btn">
+        <NoContacts hasContacts={contacts.length > 0 ? true : false}/>
+        <NewContact addContact={addContact}/>
+      </div>
+        <div className="contact-list">
+        {contacts.map((contact, index) => {
+          return (
+            <ContactCard
+              key={index}
+              id = {index}
+              imgUrl={contact.imgUrl}
+              name={contact.name}
+              number={contact.number}
+              email={contact.email}
+              onDelete={deleteContact}
+              className='list-item'
+            />
+          );
+        })}
+        </div>
       </div>
     </div>
   );
