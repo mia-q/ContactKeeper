@@ -7,17 +7,23 @@ function ContactCard(props) {
 
 
         return (
-            <div className="contact-card">
+            <div className="contact-card padding-10">
                 <img 
                 className="contact-photo"
                 src={props.imgUrl ? props.imgUrl : placeHolderImage} 
                 alt={props.name} 
                 />
                 <h3 className = "contact-name">{props.name}</h3>
-                <p className = "contact-number">{props.number}</p>
-                <p className="contact-email">{props.email}</p>
+                <div className="contact-number">
+                    <p>Phone Number: </p>
+                    <h4><i class="fa-solid fa-phone"></i>{props.number ? props.number : "no phone"}</h4>  
+                </div>
+                <div className="contact-email">
+                    <p>Email: </p>
+                    <h4 ><i class="fa-solid fa-envelope"></i>{props.email ? props.email : "no email"}</h4>
+                </div>
                 <div className="button-container">
-                    <button onClick={handleDelete} className = "card-button"><i className="fa-solid fa-trash-can"></i></button>
+                    <button onClick={handleDelete} className = "card-button cancel trash"><i className="fa-solid fa-trash-can"></i></button>
                 </div>
             </div>
             );

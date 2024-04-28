@@ -4,7 +4,6 @@
 
 import React, { useState } from 'react';
 import './App.css';
-import Header from './components/Header';
 import ContactCard from './components/ContactCard';
 import NewContact from './components/NewContactModal';
 import NoContacts from './components/NoContacts';
@@ -28,11 +27,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header className="header"/>
       <div className="main-content"> 
       <div className="msg-and-btn">
-        <NoContacts hasContacts={contacts.length > 0 ? true : false}/>
         <NewContact addContact={addContact}/>
+        <NoContacts hasContacts={contacts.length > 0 ? true : false}/>
+        
       </div>
         <div className="contact-list">
         {contacts.map((contact, index) => {
