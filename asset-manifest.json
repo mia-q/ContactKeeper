@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ContactKeeper/index.html/static/css/main.29badbb8.css",
+    "main.js": "/ContactKeeper/index.html/static/js/main.d1f47635.js",
+    "static/js/453.dd50ab9b.chunk.js": "/ContactKeeper/index.html/static/js/453.dd50ab9b.chunk.js",
+    "index.html": "/ContactKeeper/index.html/index.html",
+    "main.29badbb8.css.map": "/ContactKeeper/index.html/static/css/main.29badbb8.css.map",
+    "main.d1f47635.js.map": "/ContactKeeper/index.html/static/js/main.d1f47635.js.map",
+    "453.dd50ab9b.chunk.js.map": "/ContactKeeper/index.html/static/js/453.dd50ab9b.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.29badbb8.css",
+    "static/js/main.d1f47635.js"
+  ]
+}
